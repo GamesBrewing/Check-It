@@ -17,11 +17,6 @@ namespace ToDoListApp
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         DataTable todoList = new DataTable();
         bool isEditing = false;
         private void ToDoList_Load(object sender, EventArgs e)
@@ -53,12 +48,35 @@ namespace ToDoListApp
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                // access the table, delete the selected row (task item)
+                todoList.Rows[toDoListView.CurrentCell.RowIndex].Delete();
+            }
+            catch (Exception ex)
+            { 
+                // error checking:
+                Console.WriteLine("Error: " + ex.ToString());
+            }
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-
+            if(isEditing)
+            {
+                // if existing note, ability to change it: grab input from text boxes and add to corresponding field in table
+                todoList.Rows[toDoListView.CurrentCell.RowIndex]["Title"] = titleTextbox.Text;
+                todoList.Rows[toDoListView.CurrentCell.RowIndex]["Description"] = descriptionTextbox.Text;
+            }
+            else
+            {
+                // if brand new note, add text from title & description boxes as a new row (task item)
+                todoList.Rows.Add(titleTextbox.Text, descriptionTextbox.Text);
+            }
+            // clear out all fields have clicking Save
+            titleTextbox.Text = "";
+            descriptionTextbox.Text = "";
+            isEditing = false;
         }
     }
 }

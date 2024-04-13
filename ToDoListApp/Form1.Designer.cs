@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.descriptionTextbox = new System.Windows.Forms.Label();
-            this.titleTextbox = new System.Windows.Forms.Label();
+            this.title = new System.Windows.Forms.Label();
+            this.titleTextbox = new System.Windows.Forms.TextBox();
+            this.descriptionTextbox = new System.Windows.Forms.TextBox();
+            this.descriptionLabel = new System.Windows.Forms.Label();
+            this.titleLabel = new System.Windows.Forms.Label();
             this.newButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
@@ -41,50 +41,49 @@
             ((System.ComponentModel.ISupportInitialize)(this.toDoListView)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // title
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36.25F);
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(876, 84);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "To Do List";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(12, 90);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(876, 20);
-            this.textBox1.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(12, 139);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(876, 20);
-            this.textBox2.TabIndex = 2;
-            // 
-            // descriptionTextbox
-            // 
-            this.descriptionTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.descriptionTextbox.Location = new System.Drawing.Point(12, 113);
-            this.descriptionTextbox.Name = "descriptionTextbox";
-            this.descriptionTextbox.Size = new System.Drawing.Size(876, 23);
-            this.descriptionTextbox.TabIndex = 3;
-            this.descriptionTextbox.Text = "Description:";
-            this.descriptionTextbox.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.descriptionTextbox.Click += new System.EventHandler(this.label2_Click);
+            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 36.25F);
+            this.title.Location = new System.Drawing.Point(12, 9);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(876, 84);
+            this.title.TabIndex = 0;
+            this.title.Text = "To Do List";
+            this.title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // titleTextbox
             // 
-            this.titleTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.titleTextbox.Location = new System.Drawing.Point(12, 64);
+            this.titleTextbox.Location = new System.Drawing.Point(12, 90);
             this.titleTextbox.Name = "titleTextbox";
-            this.titleTextbox.Size = new System.Drawing.Size(876, 23);
-            this.titleTextbox.TabIndex = 4;
-            this.titleTextbox.Text = "Title:";
-            this.titleTextbox.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.titleTextbox.Size = new System.Drawing.Size(876, 20);
+            this.titleTextbox.TabIndex = 1;
+            // 
+            // descriptionTextbox
+            // 
+            this.descriptionTextbox.Location = new System.Drawing.Point(12, 139);
+            this.descriptionTextbox.Name = "descriptionTextbox";
+            this.descriptionTextbox.Size = new System.Drawing.Size(876, 20);
+            this.descriptionTextbox.TabIndex = 2;
+            // 
+            // descriptionLabel
+            // 
+            this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.descriptionLabel.Location = new System.Drawing.Point(12, 113);
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(876, 23);
+            this.descriptionLabel.TabIndex = 3;
+            this.descriptionLabel.Text = "Description:";
+            this.descriptionLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.titleLabel.Location = new System.Drawing.Point(12, 64);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(876, 23);
+            this.titleLabel.TabIndex = 4;
+            this.titleLabel.Text = "Title:";
+            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // newButton
             // 
@@ -151,11 +150,11 @@
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.newButton);
-            this.Controls.Add(this.titleTextbox);
+            this.Controls.Add(this.titleLabel);
+            this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.descriptionTextbox);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.titleTextbox);
+            this.Controls.Add(this.title);
             this.Name = "ToDoList";
             this.Text = "To Do List";
             this.Load += new System.EventHandler(this.ToDoList_Load);
@@ -167,11 +166,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label descriptionTextbox;
-        private System.Windows.Forms.Label titleTextbox;
+        private System.Windows.Forms.Label title;
+        private System.Windows.Forms.TextBox titleTextbox;
+        private System.Windows.Forms.TextBox descriptionTextbox;
+        private System.Windows.Forms.Label descriptionLabel;
+        private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Button newButton;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button deleteButton;
